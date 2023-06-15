@@ -34,28 +34,37 @@ const TaskList = () => {
 
   return (
     <div className="">
-      <form onSubmit={addTask} className="mb-14">
-        <input
-          type="text"
-          placeholder="Task Title"
-          value={title}
-          onChange={(e) => setTitle(e.target.value)}
-          className="p-2 mr-2"
-        />
-        <input
-          type="text"
-          placeholder="Task Description"
-          value={description}
-          onChange={(e) => setDescription(e.target.value)}
-          className="p-2 mr-2"
-        />
-        <button
-          type="submit"
-          className="bg-blue-500 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded"
-        >
-          Add Task
-        </button>
+      <form onSubmit={addTask} className="mb-4 sm:mb-10">
+        <div className="flex flex-col sm:flex-row ">
+          <div className="flex-grow mb-2 sm:mb-0 sm:mr-2">
+            <input
+              type="text"
+              placeholder="Task Title"
+              value={title}
+              onChange={(e) => setTitle(e.target.value)}
+              className="p-2 w-full"
+            />
+          </div>
+          <div className="flex-grow mb-2 sm:mb-0 sm:mr-2">
+            <input
+              type="text"
+              placeholder="Task Description"
+              value={description}
+              onChange={(e) => setDescription(e.target.value)}
+              className="p-2 w-full"
+            />
+          </div>
+          <div className="flex justify-center sm:justify-start mt-4 sm:mt-0">
+            <button
+              type="submit"
+              className="bg-blue-500 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded"
+            >
+              Add Task
+            </button>
+          </div>
+        </div>
       </form>
+
       {tasks.length === 0 ? (
         <p>No tasks found.</p>
       ) : (

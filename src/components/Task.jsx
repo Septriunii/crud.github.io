@@ -21,9 +21,9 @@ const Task = ({ task, onDelete, onEdit, isEditing, onUpdate }) => {
   const renderedTitle = title || "No title"; // Set default value if title is empty
 
   return (
-    <div className="bg-white bg-opacity-20 shadow-lg rounded-md p-4 mb-4 text-white relative ">
+    <div className="bg-white bg-opacity-20 shadow-lg rounded-md p-4 mb-4 text-white relative">
       {isEditing ? (
-        <form onSubmit={handleUpdate}>
+        <form onSubmit={handleUpdate} className="mb-2 sm:mb-4">
           <input
             type="text"
             value={title}
@@ -44,7 +44,7 @@ const Task = ({ task, onDelete, onEdit, isEditing, onUpdate }) => {
           </button>
         </form>
       ) : (
-        <div className="flex items-center">
+        <div className="flex flex-col sm:flex-row items-center">
           <div>
             <h2 className="text-xl font-semibold">{renderedTitle}</h2>
             <p className="text-gray-400 w-80">{task.description}</p>
